@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Surfaces ── */
+  --color-background:                #1b1112;
+  --color-surface:                   #1b1112;
+  --color-surface-dim:               #1b1112;
+  --color-surface-container-lowest:  #150c0d;
+  --color-surface-container-low:     #23191a;
+  --color-surface-container:         #281d1e;
+  --color-surface-container-high:    #332728;
+  --color-surface-container-highest: #3e3233;
+  --color-surface-bright:            #433637;
+  --color-surface-variant:           #3e3233;
+
+  /* ── Primary ── */
+  --color-primary:                   #ffb4a5;
+  --color-primary-container:         #e46d55;
+  --color-primary-fixed:             #ffdad3;
+  --color-primary-fixed-dim:         #ffb4a5;
+  --color-on-primary:                #630e02;
+  --color-on-primary-container:      #580900;
+
+  /* ── Secondary ── */
+  --color-secondary:                 #eabbba;
+  --color-secondary-container:       #624040;
+  --color-secondary-fixed-dim:       #eabbba;
+  --color-on-secondary:              #462828;
+  --color-on-secondary-container:    #dbadac;
+
+  /* ── Tertiary ── */
+  --color-tertiary:                  #ffb4a7;
+  --color-tertiary-container:        #e96a56;
+  --color-tertiary-fixed-dim:        #ffb4a7;
+  --color-on-tertiary:               #660802;
+
+  /* ── Text ── */
+  --color-on-surface:                #f2dedf;
+  --color-on-surface-variant:        #dec0ba;
+  --color-on-background:             #f2dedf;
+
+  /* ── Borders ── */
+  --color-outline:                   #a58b85;
+  --color-outline-variant:           #57423e;
+
+  /* ── Error ── */
+  --color-error:                     #ffb4ab;
+  --color-error-container:           #93000a;
+  --color-on-error:                  #690005;
+
+  /* ── Fonts ── */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --font-label:    'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1b1112;
+  color: #f2dedf;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, #d4614a, #b04030);
+}
+
+.glass-card {
+  background: rgba(35, 25, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
