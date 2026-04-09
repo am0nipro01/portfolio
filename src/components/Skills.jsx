@@ -1,52 +1,48 @@
 const skills = [
-  { icon: "token",       label: "React" },
-  { icon: "javascript",  label: "JavaScript" },
-  { icon: "palette",     label: "Tailwind" },
-  { icon: "database",    label: "Supabase" },
-  { icon: "terminal",    label: "Node.js" },
-  { icon: "code",        label: "HTML / CSS" },
+  { icon: 'terminal',   label: 'React' },
+  { icon: 'javascript', label: 'JavaScript' },
+  { icon: 'palette',    label: 'Tailwind' },
+  { icon: 'database',   label: 'Supabase' },
+  { icon: 'memory',     label: 'Node.js' },
+  { icon: 'code',       label: 'HTML / CSS' },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#23191a] py-24">
-      <div className="max-w-7xl mx-auto px-8 text-center">
-        <div className="mb-16 space-y-4">
-          <span
-            className="text-[#ffb4a5] uppercase tracking-[0.3em] text-xs"
-            style={{ fontFamily: 'Inter' }}
-          >
+    <section id="skills" style={{ background: '#23191a', paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <div className="xl-container" style={{ textAlign: 'center' }}>
+
+        <div style={{ marginBottom: '4rem' }}>
+          <span style={{ fontFamily: 'Inter', fontSize: '0.625rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: '#ffb4a5', display: 'block', marginBottom: '1rem' }}>
             Technical Arsenal
           </span>
-          <h2
-            className="text-4xl font-bold tracking-tighter text-[#f2dedf]"
-            style={{ fontFamily: 'Space Grotesk' }}
-          >
+          <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.04em', color: '#f2dedf', margin: 0 }}>
             Tools of the Trade
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {skills.map((skill) => (
-            <div
-              key={skill.label}
-              className="p-8 glass-card border border-[#57423e]/10 flex flex-col items-center gap-4 hover:bg-[#3e3233] transition-colors duration-300 rounded-lg"
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '2rem' }}>
+          {skills.map(skill => (
+            <div key={skill.label} className="glass-card" style={{
+              padding: '2rem 1rem',
+              border: '1px solid rgba(87,66,62,0.10)',
+              borderRadius: '0.25rem',
+              display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem',
+              cursor: 'default', transition: 'background 0.3s',
+            }}
+              onMouseEnter={e => e.currentTarget.style.background = '#3e3233'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(35,25,26,0.6)'}
             >
-              <span
-                className="material-symbols-outlined text-4xl text-[#ffb4a5]"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
+              <span className="material-symbols-outlined" style={{ fontSize: '2.5rem', color: '#ffb4a5', fontVariationSettings: "'FILL' 1" }}>
                 {skill.icon}
               </span>
-              <span
-                className="font-bold text-[#dec0ba] text-sm uppercase tracking-widest"
-                style={{ fontFamily: 'Space Grotesk' }}
-              >
+              <span style={{ fontFamily: 'Space Grotesk', fontWeight: 700, color: '#dec0ba', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
                 {skill.label}
               </span>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

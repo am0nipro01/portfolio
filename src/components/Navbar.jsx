@@ -1,19 +1,33 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#1b1112]/40 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <span className="text-2xl font-bold tracking-tighter text-[#dec0ba]" style={{ fontFamily: 'Space Grotesk' }}>
+    <nav style={{
+      position: 'fixed', top: 0, width: '100%', zIndex: 50,
+      background: 'rgba(27,17,18,0.40)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+    }}>
+      <div className="xl-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', paddingBottom: '1rem' }}>
+
+        <span style={{ fontFamily: 'Space Grotesk', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.05em', color: '#dec0ba' }}>
           Amoni
         </span>
 
-        <div className="hidden md:flex items-center gap-8" style={{ fontFamily: 'Space Grotesk' }}>
-          <a href="#hero"     className="text-[#e46d55] font-bold border-b border-[#e46d55]/30 transition-colors duration-300">Hero</a>
-          <a href="#projects" className="text-[#dec0ba] opacity-80 hover:text-[#e46d55] transition-colors duration-300">Projects</a>
-          <a href="#skills"   className="text-[#dec0ba] opacity-80 hover:text-[#e46d55] transition-colors duration-300">Skills</a>
-          <a href="#contact"  className="text-[#dec0ba] opacity-80 hover:text-[#e46d55] transition-colors duration-300">Contact</a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          {[['#hero','Hero'],['#projects','Projects'],['#skills','Skills'],['#contact','Contact']].map(([href, label], i) => (
+            <a key={href} href={href} style={{
+              fontFamily: 'Space Grotesk', fontWeight: 700, letterSpacing: '-0.02em',
+              color: i === 0 ? '#e46d55' : '#dec0ba',
+              opacity: i === 0 ? 1 : 0.8,
+              borderBottom: i === 0 ? '1px solid rgba(228,109,85,0.3)' : 'none',
+              paddingBottom: i === 0 ? '2px' : '0',
+              textDecoration: 'none', transition: 'color 0.3s',
+            }}>
+              {label}
+            </a>
+          ))}
         </div>
 
-        <div className="text-[#dec0ba] opacity-80 text-sm tracking-widest hidden lg:block" style={{ fontFamily: 'Space Grotesk' }}>
+        <div style={{ fontFamily: 'Space Grotesk', fontSize: '0.875rem', letterSpacing: '0.1em', color: '#dec0ba', opacity: 0.8 }}>
           FR / EN / ES / PT
         </div>
       </div>

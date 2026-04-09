@@ -1,60 +1,56 @@
 const projects = [
   {
     id: 1,
-    title: "Car Obsidian",
-    description:
-      "A sleek automotive showcase platform with immersive visuals, performance filtering and a dark editorial aesthetic.",
-    stack: ["React", "Tailwind", "Supabase"],
+    title: 'Car Obsidian',
+    description: 'A sleek automotive showcase platform with immersive dark visuals, performance filtering and an editorial aesthetic built for car enthusiasts.',
+    stack: ['React', 'Tailwind', 'Supabase'],
     image: null,
-    link: "#",
+    link: '#',
   },
   {
     id: 2,
-    title: "Algiers Gastronomy",
-    description:
-      "A restaurant discovery and reservation platform celebrating Algerian cuisine, built for local businesses with a multilingual interface.",
-    stack: ["React", "Node.js", "Supabase"],
+    title: 'Algiers Gastronomy',
+    description: 'A restaurant discovery and reservation platform celebrating Algerian cuisine — built for local businesses with a clean multilingual interface.',
+    stack: ['React', 'Node.js', 'Supabase'],
     image: null,
-    link: "#",
+    link: '#',
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-8 py-24">
-      <div className="mb-16">
-        <h2
-          className="text-4xl font-bold tracking-tighter mb-4 text-[#f2dedf]"
-          style={{ fontFamily: 'Space Grotesk' }}
-        >
+    <section id="projects" className="xl-container" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+
+      <div style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontFamily: 'Space Grotesk', fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.04em', marginBottom: '1rem', color: '#f2dedf' }}>
           Selected Works
         </h2>
-        <div className="w-24 h-1 bg-[#e46d55]/30" />
+        <div style={{ width: '6rem', height: '4px', background: 'rgba(228,109,85,0.3)' }} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {projects.map((project) => (
-          <div key={project.id} className="group space-y-6">
-            {/* Image placeholder */}
-            <div className="relative overflow-hidden rounded-xl aspect-video bg-[#23191a] flex items-center justify-center">
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
-                />
-              ) : (
-                <span className="material-symbols-outlined text-[#57423e] text-6xl">image</span>
-              )}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '3rem' }}>
+        {projects.map(project => (
+          <div key={project.id} className="project-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
+            {/* Image */}
+            <div style={{
+              position: 'relative', overflow: 'hidden', borderRadius: '0.75rem',
+              aspectRatio: '16/9', background: '#23191a',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              {project.image ? (
+                <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              ) : (
+                <span className="material-symbols-outlined" style={{ fontSize: '4rem', color: '#57423e' }}>image</span>
+              )}
               {/* Stack tags */}
-              <div className="absolute bottom-4 left-4 flex gap-2 flex-wrap">
-                {project.stack.map((tag) => (
-                  <span
-                    key={tag}
-                    className="glass-card text-[10px] uppercase tracking-widest px-3 py-1 rounded-full text-[#dec0ba] border border-[#57423e]/20"
-                    style={{ fontFamily: 'Inter' }}
-                  >
+              <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', display: 'flex', gap: '0.5rem' }}>
+                {project.stack.map(tag => (
+                  <span key={tag} className="glass-card" style={{
+                    fontSize: '0.625rem', textTransform: 'uppercase', letterSpacing: '0.15em',
+                    padding: '0.25rem 0.75rem', borderRadius: '9999px', color: '#dec0ba',
+                    border: '1px solid rgba(87,66,62,0.2)',
+                  }}>
                     {tag}
                   </span>
                 ))}
@@ -62,25 +58,21 @@ export default function Projects() {
             </div>
 
             {/* Info */}
-            <div className="space-y-3">
-              <h3
-                className="text-2xl font-bold text-[#f2dedf]"
-                style={{ fontFamily: 'Space Grotesk' }}
-              >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.5rem', fontWeight: 700, color: '#f2dedf', margin: 0 }}>
                 {project.title}
               </h3>
-              <p className="text-[#dec0ba] leading-relaxed">{project.description}</p>
-              <a
-                href={project.link}
-                className="inline-flex items-center gap-2 text-[#ffb4a5] hover:gap-4 transition-all duration-300"
-              >
-                <span
-                  className="font-bold uppercase text-xs tracking-widest"
-                  style={{ fontFamily: 'Space Grotesk' }}
-                >
+              <p style={{ color: '#dec0ba', lineHeight: 1.7, margin: 0 }}>
+                {project.description}
+              </p>
+              <a href={project.link} style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                color: '#ffb4a5', textDecoration: 'none', transition: 'gap 0.3s',
+              }}>
+                <span style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
                   View live
                 </span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>arrow_forward</span>
               </a>
             </div>
           </div>

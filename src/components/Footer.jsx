@@ -1,40 +1,29 @@
 export default function Footer() {
   return (
-    <footer className="w-full py-12 px-8 bg-[#1b1112]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-t border-[#57423e]/15 pt-8 gap-8">
-        <div
-          className="text-[#dec0ba] opacity-60 text-sm uppercase tracking-widest"
-          style={{ fontFamily: 'Inter' }}
-        >
+    <footer style={{ background: '#1b1112', padding: '3rem 0' }}>
+      <div className="xl-container" style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        borderTop: '1px solid rgba(87,66,62,0.15)', paddingTop: '2rem',
+        flexWrap: 'wrap', gap: '1.5rem',
+      }}>
+        <div style={{ fontFamily: 'Inter', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#dec0ba', opacity: 0.6 }}>
           © 2025 Amoni. Crafted with precision.
         </div>
-
-        <div className="flex items-center gap-8">
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-[#dec0ba] opacity-60 hover:opacity-100 hover:text-[#e46d55] transition-all duration-200"
-            aria-label="GitHub"
-          >
-            <span className="material-symbols-outlined">code</span>
-          </a>
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-[#dec0ba] opacity-60 hover:opacity-100 hover:text-[#e46d55] transition-all duration-200"
-            aria-label="LinkedIn"
-          >
-            <span className="material-symbols-outlined">share</span>
-          </a>
-          <a
-            href="mailto:hello@amoni.dev"
-            className="text-[#dec0ba] opacity-60 hover:opacity-100 hover:text-[#e46d55] transition-all duration-200"
-            aria-label="Email"
-          >
-            <span className="material-symbols-outlined">mail</span>
-          </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          {[
+            { href: 'https://github.com/am0nipro01', icon: 'code', label: 'GitHub' },
+            { href: 'https://linkedin.com/', icon: 'share', label: 'LinkedIn' },
+            { href: 'mailto:hello@amoni.dev', icon: 'mail', label: 'Email' },
+          ].map(({ href, icon, label }) => (
+            <a key={icon} href={href} target={href.startsWith('http') ? '_blank' : undefined}
+              rel="noreferrer" aria-label={label}
+              style={{ color: '#dec0ba', opacity: 0.6, textDecoration: 'none', transition: 'opacity 0.2s, color 0.2s' }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#e46d55'; }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = '0.6'; e.currentTarget.style.color = '#dec0ba'; }}
+            >
+              <span className="material-symbols-outlined">{icon}</span>
+            </a>
+          ))}
         </div>
       </div>
     </footer>

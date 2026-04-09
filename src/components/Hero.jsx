@@ -1,84 +1,87 @@
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative flex items-center min-h-screen"
-    >
-      <div className="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-32">
+    <section id="hero" className="xl-container" style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '3rem',
+      alignItems: 'center',
+      minHeight: '819px',
+      paddingTop: '6rem',
+      paddingBottom: '4rem',
+    }}>
 
-        {/* Left — headline + CTA */}
-        <div className="space-y-8">
-          <h1
-            className="font-bold tracking-tighter text-[#f2dedf] leading-none"
-            style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(3.5rem, 8vw, 6rem)' }}
+      {/* Left */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <h1 style={{
+          fontFamily: 'Space Grotesk', fontWeight: 700,
+          fontSize: 'clamp(3.5rem, 6vw, 5.5rem)',
+          lineHeight: 1, letterSpacing: '-0.04em',
+          color: '#f2dedf', margin: 0,
+        }}>
+          Digital <br />
+          <span style={{ color: '#e46d55' }}>Architect.</span>
+        </h1>
+
+        <p style={{ fontSize: '1.125rem', color: '#dec0ba', maxWidth: '28rem', lineHeight: 1.7 }}>
+          Crafting immersive web experiences through technical precision and organic
+          design. Available for freelance &amp; relocation abroad.
+        </p>
+
+        <div>
+          <a href="#projects" className="cta-gradient" style={{
+            display: 'inline-block', color: '#f2dedf',
+            padding: '1rem 2.5rem', borderRadius: '0.375rem',
+            fontFamily: 'Space Grotesk', fontWeight: 700,
+            fontSize: '1.125rem', letterSpacing: '-0.02em',
+            textDecoration: 'none', transition: 'transform 0.2s, filter 0.2s',
+          }}
+            onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
+            onMouseLeave={e => e.currentTarget.style.filter = 'brightness(1)'}
           >
-            Digital <br />
-            <span style={{ color: '#e46d55' }}>Architect.</span>
-          </h1>
-
-          <p className="text-lg text-[#dec0ba] max-w-md leading-relaxed">
-            Front-end developer crafting immersive web experiences through
-            technical precision and clean design. Available for freelance &amp;
-            relocation abroad.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="cta-gradient text-[#f2dedf] px-10 py-4 rounded-md font-bold text-lg tracking-tight hover:brightness-110 active:scale-95 transition-all duration-200 inline-block"
-              style={{ fontFamily: 'Space Grotesk' }}
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="text-[#dec0ba] px-10 py-4 rounded-md font-bold text-lg tracking-tight transition-colors duration-200 inline-block"
-              style={{
-                fontFamily: 'Space Grotesk',
-                border: '1px solid rgba(87,66,62,0.4)',
-              }}
-              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#332728'}
-              onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
-            >
-              Get in Touch
-            </a>
-          </div>
+            View Projects
+          </a>
         </div>
-
-        {/* Right — code snippet */}
-        <div className="relative hidden lg:block">
-          <div
-            className="absolute -inset-4 rounded-full"
-            style={{
-              background: 'radial-gradient(circle, rgba(228,109,85,0.12) 0%, transparent 70%)',
-              filter: 'blur(24px)',
-            }}
-          />
-          <div className="relative glass-card rounded-xl p-6 font-mono text-sm overflow-hidden" style={{ border: '1px solid rgba(87,66,62,0.15)' }}>
-            {/* Window dots */}
-            <div className="flex gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(255,180,171,0.4)' }} />
-              <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(255,180,165,0.4)' }} />
-              <div className="w-3 h-3 rounded-full" style={{ background: 'rgba(234,187,186,0.4)' }} />
-            </div>
-
-            <pre className="text-[#dec0ba] leading-relaxed text-xs md:text-sm overflow-x-auto">
-{`  `}<span style={{ color: '#ffb4a5' }}>const</span>{` `}<span style={{ color: '#eabbba' }}>developer</span>{` = {
-  name:      `}<span style={{ color: '#ffb4a7' }}>"Amoni"</span>{`,
-  role:      `}<span style={{ color: '#ffb4a7' }}>"Frontend Dev"</span>{`,
-  stack:     [`}<span style={{ color: '#ffb4a7' }}>"React"</span>{`, `}<span style={{ color: '#ffb4a7' }}>"Tailwind"</span>{`,
-             `}<span style={{ color: '#ffb4a7' }}>"Supabase"</span>{`, `}<span style={{ color: '#ffb4a7' }}>"Node"</span>{`],
-  available: `}<span style={{ color: '#e46d55' }}>true</span>{`,
-  location:  `}<span style={{ color: '#ffb4a7' }}>"Remote / Global"</span>{`
-};
-
-`}<span style={{ color: '#57423e' }}>{`// Open to freelance & relocation`}</span>{`
-`}<span style={{ color: '#ffb4a5' }}>await</span>{` world.`}<span style={{ color: '#eabbba' }}>hire</span>{`(developer);`}
-            </pre>
-          </div>
-        </div>
-
       </div>
+
+      {/* Right — code snippet */}
+      <div style={{ position: 'relative' }}>
+        <div style={{
+          position: 'absolute', inset: '-1rem',
+          background: 'rgba(228,109,85,0.10)',
+          borderRadius: '9999px', filter: 'blur(40px)',
+        }} />
+        <div className="glass-card" style={{
+          position: 'relative',
+          border: '1px solid rgba(87,66,62,0.15)',
+          borderRadius: '0.75rem',
+          padding: '1.5rem',
+          fontFamily: 'monospace',
+          fontSize: '0.85rem',
+          overflow: 'hidden',
+        }}>
+          {/* dots */}
+          <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem' }}>
+            <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'rgba(255,180,171,0.4)' }} />
+            <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'rgba(255,180,165,0.4)' }} />
+            <div style={{ width: 12, height: 12, borderRadius: '50%', background: 'rgba(234,187,186,0.4)' }} />
+          </div>
+
+          <pre style={{ color: '#dec0ba', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-wrap' }}>
+<span style={{ color: '#ffb4a5' }}>const</span> <span style={{ color: '#eabbba' }}>Project</span> = {'{'}
+{'  '}name: <span style={{ color: '#ffb4a7' }}>"Amoni"</span>,
+{'  '}stack: [<span style={{ color: '#ffb4a7' }}>"React"</span>, <span style={{ color: '#ffb4a7' }}>"Tailwind"</span>, <span style={{ color: '#ffb4a7' }}>"Supabase"</span>],
+{'  '}available: <span style={{ color: '#e46d55' }}>true</span>,
+{'  '}render: () =&gt; {'{'}
+{'    '}<span style={{ color: '#ffb4a5' }}>return</span> <span style={{ color: '#eabbba' }}>&lt;Portfolio /&gt;</span>;
+{'  '}{'}'}
+{'}'};
+
+<span style={{ color: '#a58b85' }}>// Open to freelance & relocation</span>
+<span style={{ color: '#ffb4a5' }}>await</span> world.<span style={{ color: '#eabbba' }}>hire</span>(Project);
+          </pre>
+        </div>
+      </div>
+
     </section>
   )
 }
