@@ -1,18 +1,44 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const LANGS = ['fr', 'en', 'es', 'pt']
+const SECTIONS = ['hero', 'projects', 'skills', 'contact']
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
-  const { t, i18n } = useTranslation()
+  const [open, setOpen]               = useState(false)
+  const [active, setActive]           = useState('hero')
+  const { t, i18n }                   = useTranslation()
+
+  // Intersection Observer — suit la section visible
+  useEffect(() => {
+    const observers = SECTIONS.map(id => {
+      const el = document.getElementById(id)
+      if (!el) return null
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActive(id) },
+        { threshold: 0.35 }
+      )
+      obs.observe(el)
+      return obs
+    })
+    return () => observers.forEach(o => o?.disconnect())
+  }, [])
 
   const links = [
-    ['#hero',     t('nav.hero')],
-    ['#projects', t('nav.projects')],
-    ['#skills',   t('nav.skills')],
-    ['#contact',  t('nav.contact')],
+    ['#hero',     'hero',     t('nav.hero')],
+    ['#projects', 'projects', t('nav.projects')],
+    ['#skills',   'skills',   t('nav.skills')],
+    ['#contact',  'contact',  t('nav.contact')],
   ]
+
+  const linkStyle = (section) => ({
+    fontFamily: 'Space Grotesk', fontWeight: 700, letterSpacing: '-0.02em',
+    color: active === section ? '#e46d55' : '#dec0ba',
+    opacity: active === section ? 1 : 0.8,
+    borderBottom: active === section ? '1px solid rgba(228,109,85,0.3)' : 'none',
+    paddingBottom: active === section ? '2px' : 0,
+    textDecoration: 'none', transition: 'color 0.3s',
+  })
 
   return (
     <>
@@ -29,17 +55,8 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="nav-links">
-            {links.map(([href, label], i) => (
-              <a key={href} href={href} style={{
-                fontFamily: 'Space Grotesk', fontWeight: 700, letterSpacing: '-0.02em',
-                color: i === 0 ? '#e46d55' : '#dec0ba',
-                opacity: i === 0 ? 1 : 0.8,
-                borderBottom: i === 0 ? '1px solid rgba(228,109,85,0.3)' : 'none',
-                paddingBottom: i === 0 ? '2px' : 0,
-                textDecoration: 'none', transition: 'color 0.3s',
-              }}>
-                {label}
-              </a>
+            {links.map(([href, section, label]) => (
+              <a key={href} href={href} style={linkStyle(section)}>{label}</a>
             ))}
           </div>
 
@@ -74,15 +91,15 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div className={`mobile-menu${open ? ' open' : ''}`}>
-        {links.map(([href, label]) => (
+        {links.map(([href, section, label]) => (
           <a key={href} href={href} onClick={() => setOpen(false)} style={{
             fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1.25rem',
-            color: '#f2dedf', textDecoration: 'none', letterSpacing: '-0.02em',
+            color: active === section ? '#e46d55' : '#f2dedf',
+            textDecoration: 'none', letterSpacing: '-0.02em',
           }}>
             {label}
           </a>
         ))}
-        {/* Language switcher mobile */}
         <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
           {LANGS.map(lang => (
             <button key={lang} onClick={() => { i18n.changeLanguage(lang); setOpen(false) }} style={{
