@@ -43,6 +43,7 @@ function SkillTile({ icon, label }) {
   return (
     <div className="glass-card" style={{
       padding: '1.25rem 0.75rem',
+      width: '7.5rem',
       border: '1px solid rgba(87,66,62,0.10)',
       borderRadius: '0.375rem',
       display: 'flex', flexDirection: 'column',
@@ -80,14 +81,11 @@ export default function Skills() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {skillGroups.map(({ category, skills }) => (
-            <div key={category}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: '#e46d55' }}>
-                  {category}
-                </span>
-                <div style={{ flex: 1, height: '1px', background: 'rgba(87,66,62,0.25)' }} />
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(7rem, 1fr))', gap: '0.875rem' }}>
+            <div key={category} style={{ textAlign: 'center' }}>
+              <span style={{ fontFamily: 'Space Grotesk', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.2em', color: '#e46d55', display: 'block', marginBottom: '1.25rem' }}>
+                {category}
+              </span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.875rem' }}>
                 {skills.map(s => <SkillTile key={s.label} {...s} />)}
               </div>
             </div>
