@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next'
+
 export default function Hero() {
+  const { t } = useTranslation()
+
   return (
     <section id="hero" className="hero-section">
       <div className="xl-container hero-grid">
@@ -10,13 +14,12 @@ export default function Hero() {
             fontSize: 'clamp(3rem, 8vw, 5.5rem)',
             lineHeight: 1, letterSpacing: '-0.04em', color: '#f2dedf',
           }}>
-            Digital <br />
-            <span style={{ color: '#e46d55' }}>Architect.</span>
+            {t('hero.title1')} <br />
+            <span style={{ color: '#e46d55' }}>{t('hero.title2')}</span>
           </h1>
 
           <p style={{ fontSize: '1.125rem', color: '#dec0ba', maxWidth: '28rem', lineHeight: 1.7 }}>
-            Crafting immersive web experiences through technical precision and
-            organic design. Available for freelance &amp; relocation abroad.
+            {t('hero.description')}
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -24,26 +27,24 @@ export default function Hero() {
               display: 'inline-block', color: '#f2dedf',
               padding: '0.875rem 2rem', borderRadius: '0.375rem',
               fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1rem',
-              letterSpacing: '-0.02em', textDecoration: 'none',
-              transition: 'filter 0.2s',
+              letterSpacing: '-0.02em', textDecoration: 'none', transition: 'filter 0.2s',
             }}
               onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.1)'}
               onMouseLeave={e => e.currentTarget.style.filter = 'brightness(1)'}
             >
-              View Projects
+              {t('hero.cta_primary')}
             </a>
             <a href="#contact" style={{
               display: 'inline-block', color: '#dec0ba',
               padding: '0.875rem 2rem', borderRadius: '0.375rem',
               fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '1rem',
               letterSpacing: '-0.02em', textDecoration: 'none',
-              border: '1px solid rgba(87,66,62,0.4)',
-              transition: 'background 0.2s',
+              border: '1px solid rgba(87,66,62,0.4)', transition: 'background 0.2s',
             }}
               onMouseEnter={e => e.currentTarget.style.background = '#332728'}
               onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
             >
-              Get in Touch
+              {t('hero.cta_secondary')}
             </a>
           </div>
         </div>
@@ -55,8 +56,7 @@ export default function Hero() {
             background: 'rgba(228,109,85,0.10)', filter: 'blur(40px)',
           }} />
           <div className="glass-card" style={{
-            position: 'relative',
-            border: '1px solid rgba(87,66,62,0.15)',
+            position: 'relative', border: '1px solid rgba(87,66,62,0.15)',
             borderRadius: '0.75rem', padding: '1.5rem',
             fontFamily: 'monospace', fontSize: '0.875rem', overflow: 'hidden',
           }}>

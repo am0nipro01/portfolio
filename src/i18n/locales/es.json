@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "hero": "Inicio",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title1": "Digital",
+    "title2": "Architect.",
+    "description": "Creando experiencias web inmersivas a través de precisión técnica y diseño orgánico. Disponible para freelance y reubicación.",
+    "cta_primary": "Ver proyectos",
+    "cta_secondary": "Contactar"
+  },
+  "projects": {
+    "heading": "Trabajos seleccionados",
+    "view_live": "Ver sitio"
+  },
+  "skills": {
+    "label": "Arsenal técnico",
+    "heading": "Herramientas del oficio"
+  },
+  "contact": {
+    "heading1": "¿Listo para construir",
+    "heading2": "algo",
+    "heading3": "increíble?",
+    "description": "Disponible para proyectos freelance y abierto a reubicación. Hablemos de tu próximo proyecto.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar mensaje",
+    "location": "Remoto / Global"
+  },
+  "footer": {
+    "copyright": "© 2025 Amoni. Hecho con precisión."
+  }
+}

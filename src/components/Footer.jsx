@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 const socials = [
   { href: 'https://github.com/am0nipro01', icon: 'code',  label: 'GitHub' },
   { href: 'https://linkedin.com/',          icon: 'share', label: 'LinkedIn' },
@@ -5,12 +7,14 @@ const socials = [
 ]
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer style={{ background: '#1b1112', paddingTop: '3rem', paddingBottom: '3rem' }}>
       <div className="xl-container">
         <div className="footer-inner">
           <span style={{ fontFamily: 'Inter', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#dec0ba', opacity: 0.6 }}>
-            © 2025 Amoni. Crafted with precision.
+            {t('footer.copyright')}
           </span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             {socials.map(({ href, icon, label }) => (

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 const skills = [
   { icon: 'terminal',   label: 'React' },
   { icon: 'javascript', label: 'JavaScript' },
@@ -8,16 +10,18 @@ const skills = [
 ]
 
 export default function Skills() {
+  const { t } = useTranslation()
+
   return (
     <section id="skills" className="skills-section" style={{ background: '#23191a' }}>
       <div className="xl-container" style={{ textAlign: 'center' }}>
 
         <div style={{ marginBottom: '3rem' }}>
           <span style={{ fontFamily: 'Inter', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.3em', color: '#ffb4a5', display: 'block', marginBottom: '1rem' }}>
-            Technical Arsenal
+            {t('skills.label')}
           </span>
           <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#f2dedf' }}>
-            Tools of the Trade
+            {t('skills.heading')}
           </h2>
         </div>
 

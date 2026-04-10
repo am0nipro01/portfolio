@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "hero": "Hero",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Digital",
+    "title2": "Architect.",
+    "description": "Crafting immersive web experiences through technical precision and organic design. Available for freelance & relocation abroad.",
+    "cta_primary": "View Projects",
+    "cta_secondary": "Get in Touch"
+  },
+  "projects": {
+    "heading": "Selected Works",
+    "view_live": "View live"
+  },
+  "skills": {
+    "label": "Technical Arsenal",
+    "heading": "Tools of the Trade"
+  },
+  "contact": {
+    "heading1": "Ready to build",
+    "heading2": "something",
+    "heading3": "great?",
+    "description": "Available for freelance opportunities and open to relocation abroad. Let's talk about your next project.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Message",
+    "send": "Send Message",
+    "location": "Remote / Global"
+  },
+  "footer": {
+    "copyright": "© 2025 Amoni. Crafted with precision."
+  }
+}
