@@ -1,6 +1,6 @@
 # Atelier 04 — Page Projets + Supabase
 
-> Statut : En cours
+> Statut : Terminé (images reportées à l'atelier 9)
 > Dernière mise à jour : 2026-04-10
 
 ## Objectif
@@ -16,14 +16,15 @@ Créer la table `projects` en base, ajouter les 2 projets réels, gérer loading
 
 ## Travail réalisé
 
-- [ ] Table `projects` créée dans Supabase
-- [ ] RLS configuré (select public)
-- [ ] Données insérées (Car Obsidian, Algiers Gastronomy)
-- [ ] Projects.jsx mis à jour (fetch Supabase + loading + erreur)
+- [x] Table `projects` créée dans Supabase
+- [x] RLS configuré (select public)
+- [x] Données insérées (Car Obsidian, Algiers Gastronomy)
+- [x] Projects.jsx mis à jour (fetch Supabase + loading skeleton + gestion erreur)
+- [x] Vrais liens Netlify mis à jour en base
 
 ## Reste à faire
 
-- [ ] Ajouter images des projets (screenshots Netlify) → image_url
+- [ ] Images des projets (screenshots) → image_url — reporté à l'atelier 9
 
 ## SQL à exécuter dans Supabase
 
