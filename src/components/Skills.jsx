@@ -5,7 +5,9 @@ const skillGroups = [
     category: 'Frontend',
     skills: [
       { icon: 'token',      label: 'React' },
+      { icon: 'layers',     label: 'Next.js' },
       { icon: 'javascript', label: 'JavaScript' },
+      { icon: 'html',       label: 'HTML5' },
       { icon: 'bolt',       label: 'Vite' },
       { icon: 'palette',    label: 'Tailwind CSS' },
       { icon: 'style',      label: 'CSS Modules' },
@@ -15,6 +17,7 @@ const skillGroups = [
   {
     category: 'Intégration',
     skills: [
+      { icon: 'api',        label: 'REST API' },
       { icon: 'translate',  label: 'i18next' },
       { icon: 'bar_chart',  label: 'Recharts' },
       { icon: 'search',     label: 'react-helmet' },
@@ -23,6 +26,7 @@ const skillGroups = [
   {
     category: 'Backend & BaaS',
     skills: [
+      { icon: 'terminal',       label: 'Node.js' },
       { icon: 'database',       label: 'Supabase' },
       { icon: 'storage',        label: 'PocketBase' },
       { icon: 'credit_card',    label: 'Stripe' },
@@ -32,9 +36,10 @@ const skillGroups = [
   {
     category: 'Outils',
     skills: [
-      { icon: 'merge',          label: 'Git' },
-      { icon: 'cloud',          label: 'Netlify' },
-      { icon: 'rocket_launch',  label: 'Fly.io' },
+      { icon: 'design_services', label: 'Figma' },
+      { icon: 'merge',           label: 'Git' },
+      { icon: 'cloud',           label: 'Netlify' },
+      { icon: 'rocket_launch',   label: 'Fly.io' },
     ],
   },
 ]

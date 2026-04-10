@@ -6,9 +6,10 @@
     "contact": "Contact"
   },
   "hero": {
-    "title1": "Digital",
-    "title2": "Architect.",
-    "description": "Je crée des expériences web immersives alliant précision technique et design organique. Disponible en freelance et ouvert à la relocalisation.",
+    "badge": "Disponible",
+    "title1": "Frontend",
+    "title2": "Developer.",
+    "description": "Développeur frontend basé à Paris, je conçois des interfaces React rapides et soignées. Disponible en freelance — mobile vers Bruxelles, Luxembourg, la Suisse et l'Espagne.",
     "cta_primary": "Voir les projets",
     "cta_secondary": "Me contacter"
   },
@@ -29,7 +30,7 @@
     "email": "Adresse e-mail",
     "message": "Message",
     "send": "Envoyer",
-    "location": "Remote / Mondial"
+    "location": "Paris · Remote · UE"
   },
   "footer": {
     "copyright": "© 2025 Amoni. Conçu avec précision."
