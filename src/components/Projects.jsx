@@ -1,12 +1,22 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { supabase } from '../lib/supabaseClient'
 
+// Retourne le champ localisé ou fallback anglais
+function loc(project, field, lang) {
+  if (lang === 'en') return project[field]
+  return project[`${field}_${lang}`] || project[field]
+}
+
 function ProjectCard({ project }) {
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
+
   return (
     <div className="project-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
       <div className="project-img-wrap">
         {project.image_url
-          ? <img src={project.image_url} alt={project.title} />
+          ? <img src={project.image_url} alt={loc(project, 'title', lang)} />
           : <span className="material-symbols-outlined" style={{ fontSize: '4rem', color: '#57423e' }}>image</span>
         }
         <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -24,10 +34,10 @@ function ProjectCard({ project }) {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
         <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 700, color: '#f2dedf' }}>
-          {project.title}
+          {loc(project, 'title', lang)}
         </h3>
         <p style={{ color: '#dec0ba', lineHeight: 1.7, fontSize: '0.95rem' }}>
-          {project.description}
+          {loc(project, 'description', lang)}
         </p>
         {project.link && project.link !== '#' && (
           <a href={project.link} target="_blank" rel="noreferrer" style={{
@@ -35,7 +45,7 @@ function ProjectCard({ project }) {
             color: '#ffb4a5', textDecoration: 'none',
           }}>
             <span style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
-              View live
+              {t('projects.view_live')}
             </span>
             <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>arrow_forward</span>
           </a>
