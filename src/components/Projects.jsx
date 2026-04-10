@@ -73,6 +73,7 @@ export default function Projects() {
   const [loading, setLoading]     = useState(true)
   const [error, setError]         = useState(null)
   const [current, setCurrent]     = useState(0)
+  const { t } = useTranslation()
 
   useEffect(() => {
     async function fetchProjects() {
@@ -105,7 +106,7 @@ export default function Projects() {
     <section id="projects" className="projects-section">
       <div className="xl-container" style={{ marginBottom: '3rem' }}>
         <h2 style={{ fontFamily: 'Space Grotesk', fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.04em', color: '#f2dedf', marginBottom: '1rem' }}>
-          Selected Works
+          {t('projects.heading')}
         </h2>
         <div style={{ width: '5rem', height: '3px', background: 'rgba(228,109,85,0.35)' }} />
       </div>
