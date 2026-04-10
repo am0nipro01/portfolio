@@ -13,7 +13,7 @@ function ProjectCard({ project }) {
   const lang = i18n.language
 
   return (
-    <div className="project-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+    <div className="project-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: '1.25rem' }}>
       <div className="project-img-wrap">
         {project.image_url
           ? <img src={project.image_url} alt={loc(project, 'title', lang)} />
@@ -32,17 +32,17 @@ function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '0.75rem' }}>
         <h3 style={{ fontFamily: 'Space Grotesk', fontSize: '1.4rem', fontWeight: 700, color: '#f2dedf' }}>
           {loc(project, 'title', lang)}
         </h3>
-        <p style={{ color: '#dec0ba', lineHeight: 1.7, fontSize: '0.95rem' }}>
+        <p style={{ color: '#dec0ba', lineHeight: 1.7, fontSize: '0.95rem', flex: 1 }}>
           {loc(project, 'description', lang)}
         </p>
         {project.link && project.link !== '#' && (
           <a href={project.link} target="_blank" rel="noreferrer" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            color: '#ffb4a5', textDecoration: 'none',
+            color: '#ffb4a5', textDecoration: 'none', marginTop: 'auto',
           }}>
             <span style={{ fontFamily: 'Space Grotesk', fontWeight: 700, fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
               {t('projects.view_live')}
